@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/routes/routes.dart';
 import 'package:todo_app/widgets/text_field.dart';
 
 import '../defaults/app_backgroung_color.dart';
@@ -56,7 +57,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   // Register Button
                   ElevatedSubmitButton(
                     text: "Register",
-                    onClick: () {},
+                    onClick: () {
+                      Navigator.popAndPushNamed(context, Routes.loginPage);
+                    },
                   )
                 ],
               ),
@@ -67,7 +70,9 @@ class _RegisterPageState extends State<RegisterPage> {
           left: 10,
           child: SafeArea(
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               icon: const Icon(
                 Icons.arrow_back,
                 size: 35,

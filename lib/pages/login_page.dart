@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_app/pages/todo_page.dart';
+import 'package:todo_app/providers/username_provider.dart';
+import 'package:todo_app/routes/routes.dart';
 
 import '../defaults/app_backgroung_color.dart';
 import '../widgets/submit_button.dart';
@@ -44,14 +48,22 @@ class _LoginPageState extends State<LoginPage> {
                 ),
 
                 // Continue Button
-                ElevatedSubmitButton(text: "Continue", onClick: () {}),
+                ElevatedSubmitButton(
+                  text: "Continue",
+                  onClick: () {
+                    context.read<UserName>().username = loginController.text;
+                    Navigator.popAndPushNamed(context, Routes.todoPage);
+                  },
+                ),
                 const SizedBox(
                   height: 10,
                 ),
 
                 // Register Button
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, Routes.registerPage);
+                    },
                     child: const Text(
                       "Register a New User",
                       style: TextStyle(

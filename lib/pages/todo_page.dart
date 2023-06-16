@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_app/providers/username_provider.dart';
 import 'package:todo_app/widgets/todo_list_tile.dart';
 
 import '../defaults/app_backgroung_color.dart';
@@ -44,15 +46,19 @@ class _TodoPageState extends State<TodoPage> {
                   ),
                 ],
               ),
-              const Padding(
-                padding: EdgeInsets.all(25.0),
-                child: Text(
-                  "Prince Todo List",
-                  style: TextStyle(
-                    fontSize: 46,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.white,
-                  ),
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: Consumer<UserName>(
+                  builder: (context, value, child) {
+                    return Text(
+                      "${value.username}'s Todo List",
+                      style: const TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.w200,
+                        color: Colors.white,
+                      ),
+                    );
+                  },
                 ),
               ),
               Expanded(
