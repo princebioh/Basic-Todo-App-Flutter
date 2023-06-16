@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/text_field.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -8,7 +10,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController _loginController = TextEditingController();
+  TextEditingController loginController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +27,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // Welcome Text
                 const Padding(
                   padding: EdgeInsets.only(bottom: 40),
                   child: Text(
@@ -35,19 +38,17 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.white),
                   ),
                 ),
+
+                // Text Field
                 Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: TextField(
-                    controller: _loginController,
-                    decoration: const InputDecoration(
-                      labelText: "Please Enter Username",
-                      labelStyle: TextStyle(color: Colors.white),
-                      border: OutlineInputBorder(),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey)),
-                    ),
+                  child: InputTextField(
+                    controller: loginController,
+                    labelText: "Please Enter Username",
                   ),
                 ),
+
+                // Continue Button
                 Padding(
                   padding: const EdgeInsets.only(top: 12),
                   child: ElevatedButton(
@@ -62,6 +63,8 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 10,
                 ),
+
+                // Register Button
                 TextButton(
                     onPressed: () {},
                     child: const Text(
