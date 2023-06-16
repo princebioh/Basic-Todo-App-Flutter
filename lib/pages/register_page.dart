@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/widgets/text_field.dart';
 
+import '../defaults/app_backgroung_color.dart';
 import '../widgets/submit_button.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -20,11 +21,7 @@ class _RegisterPageState extends State<RegisterPage> {
       children: [
         Container(
           decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.purple, Colors.blue],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ),
+            gradient: MainBackgroundColor.color,
           ),
           child: Center(
             child: SingleChildScrollView(

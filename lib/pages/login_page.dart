@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../defaults/app_backgroung_color.dart';
 import '../widgets/submit_button.dart';
 import '../widgets/text_field.dart';
 
@@ -17,11 +18,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.purple, Colors.blue],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
+          gradient: MainBackgroundColor.color,
         ),
         child: Center(
           child: SingleChildScrollView(
