@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/submit_button.dart';
 import '../widgets/text_field.dart';
 
 class LoginPage extends StatefulWidget {
@@ -40,26 +41,13 @@ class _LoginPageState extends State<LoginPage> {
                 ),
 
                 // Text Field
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: InputTextField(
-                    controller: loginController,
-                    labelText: "Please Enter Username",
-                  ),
+                InputTextField(
+                  controller: loginController,
+                  labelText: "Please Enter Username",
                 ),
 
                 // Continue Button
-                Padding(
-                  padding: const EdgeInsets.only(top: 12),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      elevation: 5,
-                      backgroundColor: Colors.purple,
-                    ),
-                    child: const Text("Continue"),
-                  ),
-                ),
+                ElevatedSubmitButton(text: "Continue", onClick: () {}),
                 const SizedBox(
                   height: 10,
                 ),
